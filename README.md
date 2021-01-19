@@ -1,5 +1,6 @@
 # CFUL-Compact
 ![](https://flat.badgen.net/badge/Lang/C/blue)
+![](https://flat.badgen.net/badge/Lang/C++/red)
 
 Colorful console output in C
 
