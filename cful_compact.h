@@ -11,17 +11,33 @@
 
 #include <stdio.h>
 
-#define RESET		"\033[0m"
-#define BOLD		"\033[1m"
-#define DIM			"\033[2m"
-#define UNDERLINE	"\033[4m"
-#define BLINK		"\033[5m"
-#define INVERTED	"\033[7m"
-#define HIDDEN		"\033[8m"
+constexpr auto RESET		= "\033[0m";
+constexpr auto BOLD			= "\033[1m";
+constexpr auto DIM			= "\033[2m";
+constexpr auto UNDERLINE	= "\033[4m";
+constexpr auto BLINK		= "\033[5m";
+constexpr auto INVERTED		= "\033[7m";
+constexpr auto HIDDEN		= "\033[8m";
 
-#define FOREGROUND	"38"
-#define BACKGROUND	"48"
+constexpr auto FOREGROUND	= "38";
+constexpr auto BACKGROUND	= "48";
 
-#define SET_COLOR(type, r, g, b) printf("\033[%s;2;%d;%d;%dm", type, r, g, b);
+const inline void SET_COLOR(const char* type, const char r, const char g, const char b)
+{
+	printf("\033[%s;2;%d;%d;%dm", type, r, g, b);
+}
 
-#endif // CFUL_H
+void CFULcompact(void)
+{
+	printf("     ██████╗███████╗██╗   ██╗██╗                 \r\n");
+	printf("    ██╔════╝██╔════╝██║   ██║██║                 \r\n");
+	printf("    ██║     █████╗  ██║   ██║██║                 \r\n");
+	printf("    ██║     ██╔══╝  ██║   ██║██║                 \r\n");
+	printf("    ╚██████╗██║     ╚██████╔╝███████╗            \r\n");
+	printf("╔═════╗╔═════╗╔═════╗╔═════╗╔═════╗╔═════╗╔═════╗\r\n");
+	printf("║ ╔═══╝║ ╔═╗ ║║ ║ ║ ║║     ║║ ╔═╗ ║║ ╔═══╝╚═╗ ╔═╝\r\n");
+	printf("║ ╚═══╗║ ╚═╝ ║║ ║ ║ ║║ ╔═══╝║ ║ ║ ║║ ╚═══╗  ║ ║  \r\n");
+	printf("╚═════╝╚═════╝╚═╝═╝═╝╚═╝    ╚═╝ ╚═╝╚═════╝  ╚═╝  \r\n");
+}
+
+#endif
